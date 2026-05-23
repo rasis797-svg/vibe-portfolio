@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="인사팀장 경력 포트폴리오 - 21년차 한국 배합사료회사 제조업 인사 전문가">
+    <title>인사팀장 경력 포트폴리오</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        header .highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #2a5298;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2a5298;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #2a5298;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: #2a5298;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #2a5298;
+        }
+
+        .timeline-year {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2a5298;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline-desc {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #2a5298;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .achievement-card h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .achievement-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-item h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            border-radius: 4px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .contact-section p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: white;
+            color: #1e3c72;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 20px;
+            }
+
+            .timeline-item::before {
+                left: -29px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>인사팀장 포트폴리오</h1>
+        <p class="subtitle">21년차 한국 배합사료회사 제조업 인사 전문가</p>
+        <span class="highlight">🏭 제조업 인사 리더십 전문가</span>
+    </header>
+
+    <div class="container">
+        <section class="about">
+            <h2 class="section-title">소   개</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        안녕하십니까. 저는 한국 배합사료 제조업 분야에서 21년간 근무한 인사팀장입니다.
+                        제조업 특성에 맞는 인력 운영, 조직 문화 혁신, 인재 육성에 전문성을 갖추고 있습니다.
+                        현장 중심의 인사 관리와 데이터 기반 의사결정으로 조직 생산성을 극대화해 왔습니다.
+                    </p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">21</div>
+                        <div class="stat-label">년 경력</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">관리 인원</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">주요 프로젝트</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="career">
+            <h2 class="section-title">경력</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2015 - 현재</div>
+                    <div class="timeline-title">인사팀장</div>
+                    <div class="timeline-desc">
+                        한국 배합사료회사 인사팀장으로서 전사 인력 운영 총괄. 채용, 교육, 평가, 보상 시스템 혁신 주도.
+                        제조 현장 인력 안정화와 생산성 향상을 위한 인사 정책 수립 및 실행.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2010 - 2015</div>
+                    <div class="timeline-title">인사팀 차장</div>
+                    <div class="timeline-desc">
+                        인사기획 및 노무 관리 업무 담당. 근로기준법 준수 및 노사 관계 개선.
+                        제조업 특화 인사 제도 개발 및 도입.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2005 - 2010</div>
+                    <div class="timeline-title">인사팀 과장</div>
+                    <div class="timeline-desc">
+                        채용 및 교육 업무 담당. 제조 현장 인력 채용 시스템 구축.
+                        신규 사원 OJT 프로그램 개발 및 운영.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2003 - 2005</div>
+                    <div class="timeline-title">인사팀 대리</div>
+                    <div class="timeline-desc">
+                        급여 및 복리후생 업무 담당. 인사 정보 시스템 도입 및 운영.
+                        기초 인사 업무 프로세스 표준화.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <h2 class="section-title">주요 성과</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <h3>🎯 인력 이률 감소</h3>
+                    <p>
+                        제조 현장 인력 이률을 25% 감소시켜 생산 안정성 확보.
+                        근무 환경 개선 및 복리후생 강화로 직원 만족도 향상.
+                    </p>
+                </div>
+                <div class="achievement-card">
+                    <h3>📈 생산성 향상</h3>
+                    <p>
+                        인사 평가 제도 개선으로 전사 생산성 18% 향상.
+                        성과 연봉제 도입 및 직무 능력 개발 프로그램 확대.
+                    </p>
+                </div>
+                <div class="achievement-card">
+                    <h3>� 우수 조직 문화</h3>
+                    <p>
+                        커뮤니케이션 채널 다양화로 조직 만족도 30점 상승.
+                        안전 보건 문화 정착으로 산업재해율 최저 수치 달성.
+                    </p>
+                </div>
+                <div class="achievement-card">
+                    <h3>👥 인재 육성</h3>
+                    <p>
+                        리더십 양성 프로그램 운영으로 50명 이상의 관리자 배출.
+                        멘토링 시스템 도입으로 신규 사원 정착률 90% 달성.
+                    </p>
+                </div>
+                <div class="achievement-card">
+                    <h3>⚖️ 노사 관계 개선</h3>
+                    <p>
+                        투명한 의사결정 프로세스 구축으로 노사 갈등 최소화.
+                        5년 연속 무분규 달성 및 생산성 유지.
+                    </p>
+                </div>
+                <div class="achievement-card">
+                    <h3>💡 디지털 혁신</h3>
+                    <p>
+                        HR 시스템 디지털화로 업무 효율 40% 향상.
+                        모바일 근태 관리 시스템 도입 및 자동화 구축.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2 class="section-title">핵심 역량</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>인사 전략 수립</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>조직 문화 혁신</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>노무 관리</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>인재 채용 및 육성</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>성과 관리</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h4>리더십</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 93%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="contact-section">
+            <h2>연락처</h2>
+            <p>인사 전문가로서의 경험과 노하우를 나누고 싶습니다.</p>
+            <a href="mailto:contact@example.com" class="contact-btn">연락하기</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 인사팀장 포트폴리오. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>
